@@ -40,6 +40,7 @@ function App() {
     const carouselButtonsN = document.querySelector<HTMLElement>('.next');
     const carouselButtonsP = document.querySelector<HTMLElement>('.prev');
     const h2 = document.querySelector<HTMLElement>('.h2');
+    const text = document.querySelector<HTMLElement>('.text');
 
     if (
       section1 &&
@@ -49,6 +50,7 @@ function App() {
       phone &&
       carouselButtonsN &&
       carouselButtonsP &&
+      text &&
       h2
     ) {
       const observer = new IntersectionObserver(
@@ -65,13 +67,14 @@ function App() {
             doit.style.scale = '6';
 
             phone.style.top = '35.75%';
-            phone.style.left = '28%';
+            phone.style.left = '28.25%';
 
             carouselButtonsN.style.display = 'block';
             carouselButtonsP.style.display = 'block';
             
             h2.style.opacity = "1"
             h2.style.transform = "translate(0)"
+            text.style.opacity ="0"
           } else {
             main.style.top = '50%';
             main.style.left = '50%';
@@ -92,6 +95,7 @@ function App() {
 
             h2.style.opacity = "0"
             h2.style.transform = "translate(150%)"
+            text.style.opacity ="1"
           }
         },
         {
@@ -113,6 +117,8 @@ if (
   doit &&
   voitures &&
   phone &&
+  carouselButtonsN &&
+  carouselButtonsP &&
   citadine &&
   familiale  
 ) {
@@ -123,6 +129,8 @@ const observer2 = new IntersectionObserver(
       main.style.opacity = "0";
       doit.style.opacity = "0";
       phone.style.opacity = "0";
+      carouselButtonsN.style.opacity = "0";
+      carouselButtonsP.style.opacity = "0";
       // main.style.display = "none";
       // doit.style.display = "none";
       // phone.style.display = "none";
@@ -133,6 +141,8 @@ const observer2 = new IntersectionObserver(
       main.style.opacity = "1";
       doit.style.opacity = "1";
       phone.style.opacity = "1";
+      carouselButtonsN.style.opacity = "1";
+      carouselButtonsP.style.opacity = "1";
       // main.style.display = "block";
       // doit.style.display = "block";
       // phone.style.display = "block";
